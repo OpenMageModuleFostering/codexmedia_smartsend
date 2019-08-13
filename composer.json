@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/CodexMedia_SmartSend",
+    "type": "magento-module",
+    "license": "MPL",
+    "homepage": "",
+    "description": "Give your Australian customers up to 5 different real-time shipping options at checkout.",
+    "authors": [
+    {
+        "name": "Codex Media",
+        "email": "paul@codexmedia.com.au"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

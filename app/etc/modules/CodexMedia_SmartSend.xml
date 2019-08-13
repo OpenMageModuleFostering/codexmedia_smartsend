@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <CodexMedia_SmartSend>
+            <active>true</active>
+            <codePool>local</codePool>
+        </CodexMedia_SmartSend>
+    </modules>
+</config> 

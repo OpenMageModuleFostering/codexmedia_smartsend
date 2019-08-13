@@ -1,0 +1,10 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<layout>
+	<checkout_onepage_index>
+		<reference name="checkout.onepage.shipping">
+			<action method="setTemplate">
+			 	<new>shipping.phtml</new>
+			</action>
+		</reference>
+	</checkout_onepage_index>
+</layout> -->
