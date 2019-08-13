@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>CodexMedia_SmartSend</name>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <stability>stable</stability>
     <license>MPL</license>
     <channel>community</channel>
@@ -10,11 +10,11 @@
     <description>The Smart Send shipping extension gives your Australian customers a range of instant shipping estimates - from cheapest to fastest.&#xD;
 &#xD;
 It features transport assurance, receipted delivery options, tail-lift assistance options and best of all - it's free.</description>
-    <notes>Tested with Magento CE 1.9, and changed to new test server</notes>
+    <notes>Receipted delivery flags</notes>
     <authors><author><name>Codex Media</name><user>spacecat</user><email>paul@codexmedia.com.au</email></author></authors>
-    <date>2014-05-20</date>
-    <time>11:17:05</time>
-    <contents><target name="mage"><dir name="."><file name="smart-send-install.txt" hash=""/></dir></target><target name="magelocal"><dir name="CodexMedia"><dir name="SmartSend"><dir name="Block"><file name="Smartsend.php" hash="f48fb8e47381b74fc0301b9381cfb0c3"/></dir><dir name="Helper"><file name="Data.php" hash="8f3d39008193315f7e7ddb628c35ba30"/><file name="Locations.php" hash="e8736b92eefac8e50794adcc99e5caca"/></dir><dir name="Model"><file name="Api.php" hash="dbe150ae119aa1d9cbd0314f709ab9ea"/><dir name="Mysql4"><file name="Setup.php" hash="d50a4306b6f10add9a6c30f4affde8c9"/></dir><dir name="Shipping"><dir name="Carrier"><file name="Smartsend.php" hash="bfeffb7226a4fd6b12e661a43257f1e5"/><file name="locations.data" hash="85b052477b10deae20a30c5a3a69a3ea"/></dir><dir name="Config"><file name="Types.php" hash="67552843ae114cfdbd6d165b88aafc1d"/></dir></dir><file name="locations.data" hash="3cd0f17601edcd9b16c03963326c3b2e"/></dir><dir name="controllers"><file name="IndexController.php" hash="a29578fb3f674177aace70f53fbb1774"/></dir><dir name="etc"><file name="config.xml" hash="5065b84559285ae031e54ec579de83d2"/><file name="system.xml" hash="2713b9089bfdb62409acbb7c75bf0759"/></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="smartsend.xml" hash="5b4b9a5db88d0655ccf6f761956b18ee"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="CodexMedia_SmartSend.xml" hash="34a04a691e07c04cdb50efbcba356de4"/></dir></target></contents>
+    <date>2014-10-27</date>
+    <time>05:28:23</time>
+    <contents><target name="mage"><dir name="."><file name="smart-send-install.txt" hash=""/></dir></target><target name="magelocal"><dir name="CodexMedia"><dir name="SmartSend"><dir name="Block"><file name="Smartsend.php" hash="f48fb8e47381b74fc0301b9381cfb0c3"/></dir><dir name="Helper"><file name="Data.php" hash="8f3d39008193315f7e7ddb628c35ba30"/><file name="Locations.php" hash="e8736b92eefac8e50794adcc99e5caca"/></dir><dir name="Model"><file name="Api.php" hash="33a72112758b6369dbfb846dd4cf4010"/><dir name="Mysql4"><file name="Setup.php" hash="d50a4306b6f10add9a6c30f4affde8c9"/></dir><dir name="Shipping"><dir name="Carrier"><file name="Smartsend.php" hash="90f7ef29edb603d2407968ece8a43897"/><file name="locations.data" hash="85b052477b10deae20a30c5a3a69a3ea"/></dir><dir name="Config"><file name="Types.php" hash="67552843ae114cfdbd6d165b88aafc1d"/></dir></dir><file name="locations.data" hash="3cd0f17601edcd9b16c03963326c3b2e"/></dir><dir name="controllers"><file name="IndexController.php" hash="a29578fb3f674177aace70f53fbb1774"/></dir><dir name="etc"><file name="config.xml" hash="5065b84559285ae031e54ec579de83d2"/><file name="system.xml" hash="2713b9089bfdb62409acbb7c75bf0759"/></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="smartsend.xml" hash="5b4b9a5db88d0655ccf6f761956b18ee"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="CodexMedia_SmartSend.xml" hash="34a04a691e07c04cdb50efbcba356de4"/></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.3.0</min><max>6.0.0</max></php><extension><name>soap</name><min></min><max></max></extension><extension><name>curl</name><min></min><max></max></extension></required></dependencies>
 </package>

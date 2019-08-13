@@ -64,18 +64,24 @@ class CodexMedia_SmartSend_Model_Shipping_Carrier_SmartSend
 		$this->suburbTo = $request->getDestCity();
 		$this->stateTo = $api->getState($this->postcodeTo);
 
+		if (empty($this->suburbTo)) {
+			$this->suburbTo = $api->getFirstTown( $this->postcodeTo );
+			Mage::log(  'Filling in '.$this->suburbTo.' as town for postcode '.$this->postcodeTo, null, 'smartsend.log' );
+		}
+
 		// Check is valid town at postcode
 		if ( !$api->isTownInPostcode( $this->postcodeTo, $this->suburbTo ) )
 		{
 			$pcTowns = array();
 			foreach( $api->getPostcodeSuburbs($this->postcodeTo) as $t )
 				$pcTowns[] = ucwords(strtolower($t));
-			$errString = 'Error in shipping calculation: You gave your town as ' . $this->suburbTo . ' for postcode '.$this->postcodeTo.'. Towns at that postcode include: '.
+			$errString = 'Error in shipping calculation: You gave your town as \'' . $this->suburbTo . '\' for postcode '.$this->postcodeTo.'. Towns at that postcode include: '.
 					implode( ', ', $pcTowns ).". Return to the 'Shipping Information' tab and enter one of these suburbs.";
 
-			Mage::log(  "Error: ".$this->suburbTo.' is not in the town list at '.$this->postcodeTo );
+			Mage::log(  "Error: ".$this->suburbTo.' is not in the town list at '.$this->postcodeTo, null, 'smartsend.log' );
 			$method = $this->_makeMethod( 'Error in shipping calculation', 10 );
 			$result->append( $this->_resultError($errString) );
+			$result->append( $method );
 			return $result;
 		}
 
@@ -163,12 +169,15 @@ class CodexMedia_SmartSend_Model_Shipping_Carrier_SmartSend
 			$quoteResult = $api->getQuote()->ObtainQuoteResult;
 
 			// Zero means success
-			if( $quoteResult->StatusCode != 0 )
+			if ( $quoteResult->StatusCode != 0 && empty( $quoteResult->Quotes->Quote ) )
 			{
+				$returnError = $quoteResult->StatusMessages->string;
+				if ( is_array( $returnError ) )
+					$returnError = implode( ", ", $returnError );
 				if( $quoteResult->StatusCode == -1 )
 				{
-					Mage::log( print_r( $quoteResult, true ) );
-					$result->append( $this->_resultError( 'ERROR: ' . (string)$quoteResult->StatusMessages->string ));
+					Mage::log( print_r( $quoteResult, true ), null, 'smartsend.log' );
+					$result->append( $this->_resultError( 'ERROR: ' . $returnError ));
 					return $result;
 				}
 				return;

@@ -57,7 +57,7 @@ class CodexMedia_Smartsend_Model_Api extends Mage_Core_Model_Abstract {
 	private $promotionalCode = '';
 	private $onlineSellerId  = '';
 
-	private $receiptedDelivery = false;
+	private $receiptedDelivery = 0;
 
 	// Object containing the results of last quote
 	private $lastQuoteResults;
@@ -180,7 +180,7 @@ class CodexMedia_Smartsend_Model_Api extends Mage_Core_Model_Abstract {
 			'userType'           => array( 'EBAY', 'PROMOTIONAL', 'VIP' ),
 			'onlineSellerId'     => '',
 			'promotionalCode'    => '',
-			'receiptedDelivery'  => array( true, false ),
+			'receiptedDelivery'  => array( 1, 0 ),
 			'tailLift'           => array( 'NONE', 'PICKUP', 'DELIVERY', 'BOTH' ),
 			'transportAssurance' => ''
 		);
